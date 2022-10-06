@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
 </head>
 <body>
     
-    <script src="script.js"></script>
+    <div class="container my-5 mx-auto">
+        <h1 class="text-muted text-center my-4">See Weather</h1>
+        <form class="change-location my-4 text-center text-muted">
+            <label for="city">Enter a location to see the weather info: </label>
+            <input type="text" name="city" class="form-control p-4">
+        </form>
+    </div>
+
+    <script src="./scripts/forecast.js"></script>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>
