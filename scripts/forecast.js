@@ -21,3 +21,5 @@ const getWeather = async (cityKey) => {
 
   return data[0];
 };
+
+// calling the function and printing the information in the console
