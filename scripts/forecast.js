@@ -21,15 +21,3 @@ const getWeather = async (cityKey) => {
 
   return data[0];
 };
-
-// calling the function and printing the information in the console
-getCity("kamakhyanagar")
-  .then((data) => {
-    return getWeather(data.Key);
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
