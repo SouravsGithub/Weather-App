@@ -16,6 +16,7 @@ const updateUI = (data) => {
   const cityDetails = data.cityDetails;
   const weather = data.weather;
 
+  // change the html of the cardDetails like cityname, weather condition and temperature
   cardDetails.innerHTML = `
     <h5 class="my-3">${cityDetails.EnglishName}</h5>
     <div class="my-3">${weather.WeatherText}</div>
@@ -24,6 +25,7 @@ const updateUI = (data) => {
         <span>&deg;${weather.Temperature.Metric.Unit}</span>
     </div>
   `;
+  // display the card when the user enters a location
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
   }
