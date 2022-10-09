@@ -38,6 +38,9 @@ const updateUI = (data) => {
 
   time.setAttribute("src", timeSrc);
 
+  // update the icon depending on the weather condition
+  icon.setAttribute("src", `img/icons/${weather.WeatherIcon}.svg`);
+
   // display the card when the user enters a location
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
