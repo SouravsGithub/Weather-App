@@ -29,12 +29,8 @@ const updateUI = (data) => {
 
   // update the day and night images depending upon the time of the location
   let timeSrc = null;
-  if (weather.IsDayTime) {
-    timeSrc = "img/day.svg";
-  } else {
-    console.log("THIS IS NOT WORKING");
-    timeSrc = "img/night.svg";
-  }
+
+  weather.IsDayTime ? (timeSrc = "img/day.svg") : (timeSrc = "img/night.svg");
 
   time.setAttribute("src", timeSrc);
 
