@@ -1,6 +1,8 @@
 const form = document.querySelector("form");
 const card = document.querySelector(".card");
 const cardDetails = document.querySelector(".details");
+const time = document.querySelector("img.time");
+const icon = document.querySelector(".icon img");
 
 const updateCity = async (city) => {
   const cityDetails = await getCity(city);
@@ -13,8 +15,7 @@ const updateCity = async (city) => {
 };
 
 const updateUI = (data) => {
-  const cityDetails = data.cityDetails;
-  const weather = data.weather;
+  const { cityDetails, weather } = data;
 
   // change the html of the cardDetails like cityname, weather condition and temperature
   cardDetails.innerHTML = `
@@ -25,6 +26,18 @@ const updateUI = (data) => {
         <span>&deg;${weather.Temperature.Metric.Unit}</span>
     </div>
   `;
+
+  // update the day and night images depending upon the time of the location
+  let timeSrc = null;
+  if (weather.IsDayTime) {
+    timeSrc = "img/day.svg";
+  } else {
+    console.log("THIS IS NOT WORKING");
+    timeSrc = "img/night.svg";
+  }
+
+  time.setAttribute("src", timeSrc);
+
   // display the card when the user enters a location
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
